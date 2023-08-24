@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cl{
+            background-color: darkgreen;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <h1>AccessRecords Table data </h1>
+        <table border = '2px'>
+            <tr id ='cl'>
+                <th>name</th>
+                <th>date</th>
+                <th>author</th>
+                <th>email</th>
+            </tr>
+        {% for ao in arqs %}
+        <tr>
+            <th>{{ ao.name }}</th>
+            <th>{{ ao.date }}</th>
+            <th>{{ ao.author }}</th>
+            <th>{{ ao.email }}</th>      
+        </tr> 
+        {% endfor %}   
+        </table>
+    </center>
+</body>
+</html>
