@@ -28,7 +28,18 @@ def display_webpage(request):
     return render(request,'display_webpage.html',d)
 
 def display_AccessRecords(request):
-    arqs = Webpage.objects.all()
+    arqs = AccessRecord.objects.all()
     d ={'arqs':arqs}
     return render(request,'display_AccessRecords.html',d)
 
+def Insert_accessrecord(request):
+    nm = input('enter name : ')
+    dt = input('enter date : ')
+    au = input('enter author : ')
+    em = input('enter email : ')
+    wo = Webpage.objects.get(name=nm)
+    ao = AccessRecord.objects.get_or_create(name=nm,date=dt,author=au,email=em)
+    ao.save()
+    arqs = AccessRecord.objects.all()
+    d ={'arqs':arqs}
+    return render(request,'display_AccessRecords.html',d)

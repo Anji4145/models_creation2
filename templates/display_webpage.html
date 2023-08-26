@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .ta{
-            border:2px;
-        }
-        .t{background-color: blue;}
+        
+        .t{background-color: greenyellow;}
     </style>
 </head>
 <body>
     <h1 align="center">Webpage table data</h1>
-<table align="center", class="ta">
-    <tr class="t">
+    <center>
+<table border='2px'>
+    <tr class='t'>
+        <th>pk</th>
         <th>topic_name</th>
         <th>name</th>
         <th>url</th>
     </tr>
     {% for wo in wpqs %}
     <tr>
+        <td>{{wo.pk}}</td>
         <td>{{ wo.topic_name }}</td>
         <td>{{ wo.name }}</td>
         <td>{{ wo.url }}</td>
     </tr>
     {% endfor %}
 </table>
+</center>
 </body>
 </html>

@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         #cl{
-            background-color: darkgreen;
+            background-color: yellow;
         }
     </style>
 
@@ -16,6 +16,7 @@
         <h1>AccessRecords Table data </h1>
         <table border = '2px'>
             <tr id ='cl'>
+                <th>pk</th>
                 <th>name</th>
                 <th>date</th>
                 <th>author</th>
@@ -23,10 +24,11 @@
             </tr>
         {% for ao in arqs %}
         <tr>
-            <th>{{ ao.name }}</th>
-            <th>{{ ao.date }}</th>
-            <th>{{ ao.author }}</th>
-            <th>{{ ao.email }}</th>      
+            <td>{{ ao.pk }}</td>
+            <td>{{ ao.name }}</td>
+            <td>{{ ao.date }}</td>
+            <td>{{ ao.author }}</td>
+            <td>{{ ao.email }}</td>      
         </tr> 
         {% endfor %}   
         </table>
